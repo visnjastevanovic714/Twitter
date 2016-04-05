@@ -1,15 +1,36 @@
 package com.twitter;
 
+/**
+ * Ova klasa sadrzi metode za unos i pronalazenje i vracanje poruka
+ * 
+ * @author Visnja Stevanovic
+ */
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
 public class Twitter {
+	/**
+	 * Inicijalizacija liste objekata klase TwitterPoruka
+	 */
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
 
+	/**
+	 * Metoda koja vraca sve poruke
+	 * 
+	 * @return lista poruka
+	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke() {
 		return poruke;
 	}
 
+	/**
+	 * Metoda unosi novu poruku na kraj liste
+	 * 
+	 * @param korisnik
+	 *            Ime korisnika
+	 * @param poruka
+	 *            Tekst poruke
+	 */
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
@@ -19,6 +40,14 @@ public class Twitter {
 		poruke.addLast(tp);
 	}
 
+	/**
+	 * 
+	 * @param maxBroj
+	 *            Maximalan broj poruka
+	 * @param tag
+	 *            Tag koji se prosledjuje
+	 * @return niz poruka koje sadrze unet tag
+	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag == "")
 			throw new RuntimeException("Morate uneti tag");

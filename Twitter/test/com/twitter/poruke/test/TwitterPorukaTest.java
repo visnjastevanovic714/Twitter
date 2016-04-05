@@ -9,7 +9,6 @@ import org.junit.Test;
 import com.twitter.poruke.TwitterPoruka;
 
 public class TwitterPorukaTest {
-
 	TwitterPoruka tp;
 
 	@Before
@@ -52,8 +51,8 @@ public class TwitterPorukaTest {
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetPorukaPreko140() {
 		String p = "";
-		for(int i=0;i<=50;i++){
-			p+="fon";
+		for (int i = 0; i <= 50; i++) {
+			p += "fon";
 		}
 		tp.setPoruka(p);
 		assertEquals(p, tp.getPoruka());
@@ -65,7 +64,7 @@ public class TwitterPorukaTest {
 		String poruka = "Car";
 		tp.setKorisnik(korisnik);
 		tp.setPoruka(poruka);
-		assertEquals("KORISNIK:" +korisnik+ " PORUKA:" +poruka, tp.toString());
+		assertEquals("KORISNIK:" + korisnik + " PORUKA:" + poruka, tp.toString());
 	}
 
 }

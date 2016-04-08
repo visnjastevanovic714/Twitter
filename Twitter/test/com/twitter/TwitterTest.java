@@ -1,4 +1,4 @@
-package com.twitter.test;
+package com.twitter;
 
 import static org.junit.Assert.*;
 
@@ -88,6 +88,7 @@ public class TwitterTest {
 
 		t.vratiPoruke(maxBroj, tag);
 	}
+
 	@Test
 	public void testVratiPorukeSveOk() {
 

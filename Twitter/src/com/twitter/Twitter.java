@@ -1,12 +1,15 @@
 package com.twitter;
 
+import java.util.LinkedList;
+import com.twitter.poruke.TwitterPoruka;
+
 /**
+ * 
  * Ova klasa sadrzi metode za unos i pronalazenje i vracanje poruka
  * 
  * @author Visnja Stevanovic
+ *
  */
-import java.util.LinkedList;
-import com.twitter.poruke.TwitterPoruka;
 
 public class Twitter {
 	/**
@@ -30,10 +33,18 @@ public class Twitter {
 	 *            Ime korisnika
 	 * @param poruka
 	 *            Tekst poruke
+	 * 
+	 * @throws java.lang.RuntimeException
+	 *             ako je uneta vrednost atributa korisnik ili atributa poruka
+	 *             <ul>
+	 *             <li>null
+	 *             <li>prazan String
+	 *             </ul>
+	 * 
 	 */
 	public void unesi(String korisnik, String poruka) {
-		if (korisnik == "" || poruka == "") {
-			throw new RuntimeException("Korisnik i poruka ne smeju biti null");
+		if (korisnik == "" || poruka == "" || korisnik == null || poruka == null) {
+			throw new RuntimeException("Korisnik i poruka ne smeju biti null, kao ni prazan String");
 		}
 		// Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
@@ -49,6 +60,12 @@ public class Twitter {
 	 *            Maximalan broj poruka
 	 * @param tag
 	 *            Tag koji se prosledjuje
+	 * @throws java.lang.RuntimeException
+	 *             ako je vrednost atributa tag
+	 *             <ul>
+	 *             <li>null
+	 *             <li>prazan String
+	 *             </ul>
 	 * @return niz poruka koje sadrze unet tag
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {

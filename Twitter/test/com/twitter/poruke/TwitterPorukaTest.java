@@ -1,4 +1,4 @@
-package com.twitter.poruke.test;
+package com.twitter.poruke;
 
 import static org.junit.Assert.*;
 

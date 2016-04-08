@@ -1,6 +1,8 @@
 package com.twitter.poruke;
 
 /**
+ * Ova klasa sadrzi atribute korisnik i poruka, kao i get i set metode za ove
+ * atribute i equals metodu
  * 
  * @author Visnja Stevanovic
  *
@@ -40,7 +42,7 @@ public class TwitterPoruka {
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik == "")
-			throw new RuntimeException("Ime korisnika mora biti uneto");
+			throw new RuntimeException("Ime korisnika ne sme biti null,kao ni prazan String");
 		this.korisnik = korisnik;
 	}
 
@@ -57,16 +59,16 @@ public class TwitterPoruka {
 	 * Metoda postavlja tekst poruke
 	 * 
 	 * @param poruka
-	 *            * @throws java.lang.RuntimeException ako je uneta vrednost
-	 *            atributa poruka
-	 *            <ul>
-	 *            <li>null
-	 *            <li>duzina veca od 140 karaktera
-	 *            </ul>
+	 * @throws java.lang.RuntimeException
+	 *             ako je uneta vrednost atributa poruka
+	 *             <ul>
+	 *             <li>null
+	 *             <li>duzina veca od 140 karaktera
+	 *             </ul>
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka.length() > 140)
-			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
+			throw new RuntimeException("Poruka ne sme biti prazna i ne sme imati vise od 140 karaktera");
 		this.poruka = poruka;
 	}
 
